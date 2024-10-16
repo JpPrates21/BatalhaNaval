@@ -214,3 +214,34 @@ printf (" %d " , jog2[i][j]);
 printf("\n");
 }
 printf("\n");
+
+int naviosJ1 = 0; //quantidade de navios restantes do jogador 1
+int naviosJ2 = 0; //quantidade de navios restantes do jogador 2
+
+    // Contar os navios restantes para cada jogador
+    for (i = 0; i < 10; i++) {
+        for (j = 0; j < 10; j++) {
+            if (jog1[i][j] == 1) {
+                naviosJ1++;
+            }
+            if (jog2[i][j] == 1) {
+                naviosJ2++;
+            }
+        }
+    }
+
+    //vitoria do jogador 1
+    if (naviosJ1 > naviosJ2 && naviosJ2 == 0) {
+        printf("1");
+    //vitoria do jogador 2
+    } else if (naviosJ2 > naviosJ1 && naviosJ1 == 0) {
+        printf("2");
+    //empate em caso de ambos os jogadores possuirem navios
+    } else if (naviosJ1 > 0 && naviosJ2 > 0) {
+        printf("0");
+    //empate em caso de ambos os jogadores não possuirem navios
+    } else {
+        printf("0");
+    }
+    return 0;
+}
